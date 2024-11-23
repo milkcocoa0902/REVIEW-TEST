@@ -51,3 +51,9 @@ jobs:
       # PDFを生成
       - name: Generate PDF with Re:View
         run: rake pdf
+      # 生成したPDFをアーティファクトとして保存
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: generated-pdf
+          path: ./book.pdf
